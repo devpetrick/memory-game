@@ -1,0 +1,89 @@
+*{    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "righteous", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #305079;
+}
+
+.card{
+    width: 120px;
+    height: 120px;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.card_front, .card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .45);
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.card_front{
+    transform: rotateY(180deg);
+    background-color: #101c2c;
+}
+
+.card_back{
+    background-color: #05c3ff;
+    font-size: 30px;
+    color: #101c2c;
+    /* display: none; */
+}
+
+#gameOver{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.884);
+    top: 0;
+}
+
+#restart{
+    padding: 20px;
+    font-size: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#gameBoard{
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr ;
+    gap: 20px;
+}
+
+.marca{
+    position: fixed;
+    color: white;
+    bottom: 0;
+    right: 0;
+    margin: 25px;
+    font-size: 25px;
+}
